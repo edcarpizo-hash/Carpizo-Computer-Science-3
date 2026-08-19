@@ -1,0 +1,83 @@
+#---------------------------------------------------------------------------------------------------------
+#  CODE 1
+#---------------------------------------------------------------------------------------------------------
+
+def greet_students(name,nchar):
+    for i in range (nChar):
+        print(name[i])
+
+name = input("Enter a name : ")
+nChar = input("Enter any numeric number : ")
+nChar = int(nChar)
+greet_students(name, nChar)
+
+# A. If name is “Joseph The Dreamer” and nChar is 5, what will be the output of the code above and why?: 
+#   - The output will be:
+#     J
+#     o
+#     s
+#     e
+#     p
+#     h
+#   - the output will be loop runs 5 times because the number the user enters becomes the range. Each number is used as an index for name.
+# B. Using the same name and nChar is 20, what now is the output and why?:
+#   - There will be an IndexError. "Joseph The Dreamer" has only 18 characters, including spaces. The loop cant access the 19th and 20th index because they dont exist.
+# C. If there is an error message encountered in letter b, how will you be able to modify the code so that the error message will not appear.
+#   - Modyfying the code using the min() function will return the smaller of the twwo values, which will be the length of the name.This will prevent the IndexError from occuring because the loop will only run for the number of characters in the name, even if nChar is larger than that.
+
+def greet_students(name, nChar):
+    for i in range(min(nChar, len(name))):
+        print(name[i])
+
+name = input("Enter a name: ")
+nChar = int(input("Enter any numeric number: "))
+greet_students(name, nChar)
+
+#---------------------------------------------------------------------------------------------------------
+# CODE 2
+#---------------------------------------------------------------------------------------------------------
+
+    #def greet_students(name,nChar):
+        #for i in range (nChar):
+            #print(name[0 : nChar])
+
+    #name = input("Enter a name : ")
+    #greet_students(name, len(name))
+
+# A. Find the syntax error and modify it.  Please identify the error and what did you do to fix it?:
+#  - The error is that the code does not print the name in an inverted triangle but it insead prints the name in a straight line.
+# B. The code should be able to display a given name as an inverted triangle, please fix the code in order for it to do that:
+# - range(len(name), 0, -1) counts backward. This helps print the name in an inverted triaangle. 
+
+def greet_students(name):
+    for i in range(len(name), 0, -1):
+        print(name[0:i])
+
+name = input("Enter a name : ")
+greet_students(name)
+
+#---------------------------------------------------------------------------------------------------------
+# Code 3
+#---------------------------------------------------------------------------------------------------------
+
+    #n = 0
+    #while n < 1 or n > 100:
+        #n = input("Enter a number from 1 to 100 : ")
+        #n = int(n)
+
+    #print("Sum of all squared numbers is", sum_of_squared(n))
+
+# A. You are tasked to create the needed function/s that will return the sum of all squared numbers from 1 to n.
+
+n = 0
+while n < 1 or n > 100:
+    n = input("Enter a number from 1 to 100 : ")
+    n = int(n)
+
+def sum_of_squared(n):
+    sum = 0
+    for i in range(1, n + 1):
+        sum += i ** 2
+    return sum
+
+print("Sum of all squared numbers is", sum_of_squared(n))
