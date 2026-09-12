@@ -21,6 +21,12 @@ arthur.take_damage(10)
 print(f"Arthur's health after taking damage: {arthur.health}")
 print(f"Morgana's health: {morgana.health}")
 
+# Prints who is at full health
+if arthur.health == 100:
+  print(f"{arthur.name} is at full health.")
+if morgana.health == 100:
+  print(f"{morgana.name} is at full health.")
+  
 # Prints the heroes' stats
 print(arthur.stats())
 print(morgana.stats())
