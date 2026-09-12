@@ -1,0 +1,25 @@
+# Class for the characters
+class Hero:
+  def __init__(self, name, health, attack):
+    self.name = name
+    self.health = health
+
+  def take_damage(self, damage):
+    self.health -= damage
+  
+# Creates two heroes
+arthur = Hero("Arthur", 100, 15)
+morgana = Hero("Morgana", 100, 10)
+
+# Makes arthur take 10 damage
+arthur.take_damage(10)
+
+# Print both heroes' health
+print(f"Arthur's health after taking damage: {arthur.health}")
+print(f"Morgana's health: {morgana.health}")
+
+# Prints a message if either hero is at full health
+if arthur.health == 100:
+  print(f"Arthur is at full health!")
+if morgana.health == 100:
+  print(f"Morgana is at full health!")
